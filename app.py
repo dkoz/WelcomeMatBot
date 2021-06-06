@@ -107,7 +107,7 @@ async def on_member_update(before, after):
         return
 
     # Send the message
-    channel.send(f'{after.name} earned the {role.name} role!')
+    await channel.send(f'{after.name} earned the {role.name} role!')
 
 
 # Run Bot
