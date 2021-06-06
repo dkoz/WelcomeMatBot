@@ -67,7 +67,7 @@ async def on_member_join(member):
 
 # DM admins if a member leaves the server
 @client.event
-async def on_member_leave(member):
+async def on_member_remove(member):
     await send_admin_dms(member, f'{member.name} has left your server')
 
 
