@@ -107,7 +107,7 @@ async def on_member_update(before, after):
         return
 
     # Send the message
-    await channel.send(f'{after.name} has finished reading the rules! You can now welcome them!')
+    await channel.send(f'{after.mention} has finished reading the rules! You can now welcome them!')
 
 
 # Run Bot
