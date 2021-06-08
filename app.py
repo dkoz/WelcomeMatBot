@@ -62,13 +62,13 @@ async def send_admin_dms(member, message):
 # DM admins if a member joins the server
 @client.event
 async def on_member_join(member):
-    await send_admin_dms(member, f'{member.mention} has joined Valhalla.')
+    await send_admin_dms(member, f'{member.name} has joined Valhalla.')
 
 
 # DM admins if a member leaves the server
 @client.event
 async def on_member_remove(member):
-    await send_admin_dms(member, f'{member.mention} has left Valhalla.')
+    await send_admin_dms(member, f'{member.name} has left Valhalla.')
 
 
 # Send a message to the channel if someone gets the special role
@@ -107,7 +107,7 @@ async def on_member_update(before, after):
         return
 
     # Send the message
-    await channel.send(f'Pour the mead!\n{after.mention} has survived reading the rules. You can now welcome them!')
+    await channel.send(f'Pour the mead and welcome our new Valhallan!\n{after.mention}, we are thrilled to have you.\nPlease introduce yourself when able, we would love to get to know you!')
 
 
 # Run Bot
