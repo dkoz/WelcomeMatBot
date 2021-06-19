@@ -69,6 +69,34 @@ async def on_member_join(member):
 @client.event
 async def on_member_remove(member):
     await send_admin_dms(member, f'{member.name} has left Valhalla.')
+    
+     # Get the guild
+    guild = member.guild
+
+    # Get the role
+    special_role = guild.get_role(SPECIAL_ID)
+
+    # Exit if it could not be found
+    if special_role is None:
+        print('The special role could not be found.')
+        return
+
+    # Exit if the member does not have the special role after
+    for role in member.roles:
+        if role == special_role:
+            break
+    else:
+        return 
+
+    # Get the channel
+    channel = guild.get_channel(CHANNEL_ID)
+
+    # Exit if it could not be found
+    if channel is None:
+        print('The channel could not be found.')
+        return   
+
+    await channel.send(f'{member.name} has left Valhalla.')
 
 
 # Send a message to the channel if someone gets the special role
