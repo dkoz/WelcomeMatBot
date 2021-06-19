@@ -96,7 +96,7 @@ async def on_member_remove(member):
         print('The channel could not be found.')
         return   
 
-    await channel.send(f'{member.name} has left Valhalla.')
+    await channel.send(f'{member.name} has departed Valhalla.')
 
 
 # Send a message to the channel if someone gets the special role
